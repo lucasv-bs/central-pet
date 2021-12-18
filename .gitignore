@@ -1,0 +1,4 @@
+.env
+App/Images/*.png
+App/Images/*.jpg
+App/Images/*.jpeg
