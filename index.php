@@ -21,7 +21,16 @@ $app_loader->addDirectory('App/View');
 $app_loader->register();
 
 use CentralPet\Environment\EnvironmentVariableLoader;
+use CentralPet\Http\Router;
 
 EnvironmentVariableLoader::load(__DIR__);
 
 define('URL', getenv('URL'));
+
+View::init([
+    'URL' => URL
+]);
+
+$obRouter = new Router(URL);
+
+$obRouter->run()->sendResponse();
