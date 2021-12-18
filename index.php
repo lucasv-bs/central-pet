@@ -19,3 +19,9 @@ $app_loader->addDirectory('App/Controller');
 $app_loader->addDirectory('App/Model');
 $app_loader->addDirectory('App/View');
 $app_loader->register();
+
+use CentralPet\Environment\EnvironmentVariableLoader;
+
+EnvironmentVariableLoader::load(__DIR__);
+
+define('URL', getenv('URL'));
