@@ -1,0 +1,17 @@
+:root {
+    --home-text-color: #462b6e;
+}
+
+body {
+    background: linear-gradient(to bottom, #9370DB, #661A99) no-repeat;
+    height: 100vh;
+}
+
+#intro {
+    background-image: url('../../../Images/woman-with-home-pets.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow-y: hidden;
+}
