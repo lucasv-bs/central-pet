@@ -3,8 +3,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #9370DB, #661A99) no-repeat;
-    height: 100vh;
+    background: linear-gradient(to bottom, #9370DB, #661A99) no-repeat;    
 }
 
 #intro {
@@ -14,4 +13,8 @@ body {
     background-size: cover;
     height: 100vh;
     overflow-y: hidden;
+}
+
+#footer {
+    background-color: #fff;
 }
