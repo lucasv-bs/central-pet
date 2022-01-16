@@ -1,4 +1,8 @@
 <?php
+namespace App\Controller\Pages;
+
+use App\Model\Entity\Organization;
+use App\View\View;
 
 class Home Extends Page {
     public static function getHome() {

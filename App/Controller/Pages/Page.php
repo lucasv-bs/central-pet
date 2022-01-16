@@ -1,4 +1,7 @@
 <?php
+namespace App\Controller\Pages;
+
+use App\View\View;
 
 class Page {
 
