@@ -1,0 +1,44 @@
+<main class="container">
+    <h1>{{title}}</h1>
+    <div class="card my-3 border-0">
+        <h2 class="card-header">Atendimentos</h2>
+        <div class="card-body">
+            <table class="table table-light table-striped">
+                <thead>
+                    <tr>
+                        <th hidden>ID do atendimento</th>
+                        <th hidden>ID do dono</th>
+                        <th hidden>ID do pet</th>
+                        <th>Nome do dono</th>
+                        <th>Nome do Pet</th>
+                        <th>Serviço</th>
+                        <th>Data e hora</th>
+                        <th>Valor</th>
+                        <th style="width: 200px">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{appointment-itens}}
+                </tbody>
+            </table>
+        </div>
+        <h2 class="card-header">Cadastros</h2>
+        <div class="card-body">
+            <table class="table table-light table-striped">
+                <thead>
+                    <tr>
+                        <th hidden>ID do dono</th>
+                        <th hidden>ID do pet</th>
+                        <th>Nome do dono</th>
+                        <th>Nome do Pet</th>
+                        <th style="width: 200px;">Raça</th>
+                        <th style="width: 200px">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{register-itens}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
