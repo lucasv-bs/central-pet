@@ -1,5 +1,9 @@
 <?php
 
+use App\Controller\Pages\About;
+use App\Controller\Pages\Home;
+use App\Controller\Pages\Register;
+use App\Controller\Pages\Report;
 use CentralPet\Http\Response;
 
 
@@ -9,15 +13,20 @@ $obRouter->get('/', [
     }
 ]);
 
+$obRouter->get('/about', [
+    function($idPagina, $acao) {
+        return new Response(200, About::getAbout());
+    }
+]);
+
 $obRouter->get('/register', [
     function() {
         return new Response(200, Register::getRegister());
     }
 ]);
 
-
-$obRouter->get('/about', [
-    function($idPagina, $acao) {
-        return new Response(200, About::getAbout());
+$obRouter->get('/report', [
+    function() {
+        return new Response(200, Report::getReport());
     }
 ]);
