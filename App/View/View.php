@@ -1,4 +1,5 @@
 <?php
+namespace App\View;
 
 class View {
     private static $vars = [];
