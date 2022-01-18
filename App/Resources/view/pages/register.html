@@ -1,0 +1,70 @@
+<main class="container">
+    <h1>{{title}}</h1>
+    <div class="card my-3 border-0">
+        <h2 class="card-header">Dados do pet</h2>
+        <div class="card-body">
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="pet_name">Nome:</label>
+                    <input type="text" class="form-control" name="pet_name" id="pet_name">
+                </div>
+                <div class="form-group">
+                    <label for="breed">Raça:</label>
+                    <input type="text" class="form-control" name="breed" id="breed">
+                </div>
+                <div class="form-group">
+                    <label for="birth_date">Data de nascimento:</label>
+                    <input type="date" class="form-control" name="birth_date" id="birth_date">
+                </div>
+                <div class="form-group">
+                    <label for="breed">Data da última vacina:</label>
+                    <input type="date" class="form-control" name="breed" id="breed">
+                </div>
+            </form>
+        </div>
+        <h2 class="card-header border-top">Dados do dono</h2>
+        <div class="card-body">
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="owner_name">Nome:</label>
+                    <input type="text" class="form-control" name="owner_name" id="owner_name">
+                </div>
+                <div class="form-group">
+                    <label for="owner_birth_date">Data de nascimento:</label>
+                    <input type="date" class="form-control" name="owner_birth_date" id="owner_birth_date">
+                </div>
+                <div class="form-group">
+                    <label for="document_number">CPF:</label>
+                    <input type="text" class="form-control" name="document_number" id="document_number">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="phone" class="form-control" name="phone" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="postal_code">CEP:</label>
+                    <input type="text" class="form-control" name="postal_code" id="postal_code">
+                </div>
+                <div class="form-group">
+                    <label for="address">Endereço:</label>
+                    <input type="text" class="form-control" name="address" id="address">
+                </div>
+                <div class="form-group">
+                    <label for="state">Estado:</label>
+                    <select name="state" id="state"></select>
+                </div>
+                <div class="form-group">
+                    <label for="city">Cidade:</label>
+                    <input type="text" class="form-control" name="city" id="city">
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary">Cadastrar</button>
+        </div>
+    </div>
+</main>
