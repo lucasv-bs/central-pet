@@ -7,11 +7,9 @@ use App\View\View;
 class Home Extends Page {
     public static function getHome() {
 
-        $obOrganization = new Organization;
-
         $content = View::render('pages/home', [
-            'title' => $obOrganization->title,
-            'description' => $obOrganization->description
+            'title' => 'Central Pet',
+            'description' => 'A segunda casa do seu pet'
         ]);
 
         return parent::getPage('Central Pet - Home', $content);
