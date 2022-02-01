@@ -9,7 +9,20 @@ class Register Extends Page {
     public static function getRegister() {
         
         $content = View::render('pages/register', [
-            'title' => 'Central Pet'
+            'title' => 'Central Pet',
+            'pet_name' => '',
+            'breed' => '',
+            'birth_date' => '',
+            'last_vaccine_date' => '',
+            'owner_name' => '',
+            'owner_birth_date' => '',
+            'document_number' => '',
+            'phone' => '',
+            'email' => '',
+            'postal_code' => '',
+            'address' => '',
+            'state' => '',
+            'city' => ''
         ]);
 
         return parent::getPage('Central Pet - Register', $content);
