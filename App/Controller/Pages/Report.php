@@ -18,7 +18,7 @@ class Report extends Page {
                 'appointment_id' => $appointment['appointment_id'],
                 'owner_id' => $appointment['owner_id'],
                 'owner_name' => $appointment['owner_name'],
-                'pet_id' => $appointment['pet_di'],
+                'pet_id' => $appointment['pet_id'],
                 'pet_name' => $appointment['pet_name'],
                 'service' => $appointment['service'],
                 'appointment_date_time' => $appointment['appointment_date_time'],
@@ -38,7 +38,7 @@ class Report extends Page {
             $register_itens .= View::render('data/report/register-item', [
                 'owner_id' => $register['owner_id'],
                 'owner_name' => $register['owner_name'],
-                'pet_id' => $register['pet_di'],
+                'pet_id' => $register['pet_id'],
                 'pet_name' => $register['pet_name'],
                 'breed' => $register['breed']
             ]);
