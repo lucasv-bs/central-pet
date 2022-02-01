@@ -25,6 +25,12 @@ $obRouter->get('/register', [
     }
 ]);
 
+$obRouter->post('/register', [
+    function($request) {
+        return new Response(200, Register::setNewRegister($request));
+    }
+]);
+
 $obRouter->get('/report', [
     function() {
         return new Response(200, Report::getReport());
