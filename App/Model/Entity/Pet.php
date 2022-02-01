@@ -20,6 +20,7 @@ class Pet {
         return $result;
     }
 
+
     public static function getPetByValue($value) {
         if (is_numeric($value)) {
             $where = "id = {$value}";
@@ -28,5 +29,27 @@ class Pet {
             $where = "name like '%{$value}%'";
         }
         return self::getPet($where)->fetchObject(self::class);
+    }
+
+
+    public function insert() {
+        $this->id = (new Repository('pet'))->insert([
+            'name' => $this->name,
+            'breed' => $this->breed,
+            'birth_date' => $this->birth_date,
+            'last_vaccine_date' => $this->last_vaccine_date
+        ]);
+
+        return $this->id ? $this->id : false;
+    }
+
+
+    public function setOwner($owner_id) {
+        $owner_pet_id = (new Repository('owner_pet'))->insert([
+            'pet_id' => $this->id,
+            'owner_id' => $owner_id
+        ]);
+
+        return $owner_pet_id ? $owner_pet_id : false;
     }
 }
