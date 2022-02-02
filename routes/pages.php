@@ -31,6 +31,12 @@ $obRouter->post('/register', [
     }
 ]);
 
+$obRouter->get('/register/{id}/edit', [
+    function($request, $id) {
+        return new Response(200, Register::getRegisterEdit($request, $id));
+    }
+]);
+
 $obRouter->get('/report', [
     function() {
         return new Response(200, Report::getReport());
