@@ -51,6 +51,16 @@ class Owner {
     }
 
 
+    public function setPet($pet_id) {
+        $owner_pet_id = (new Repository('owner_pet'))->insert([
+            'owner_id' => $this->id,
+            'pet_id' => $pet_id            
+        ]);
+
+        return $owner_pet_id ? $owner_pet_id : false;
+    }
+
+
     public function insert() {
         $this->id = (new Repository('owner'))->insert([
             'name' => $this->name,
@@ -68,12 +78,17 @@ class Owner {
     }
 
 
-    public function setPet($pet_id) {
-        $owner_pet_id = (new Repository('owner_pet'))->insert([
-            'owner_id' => $this->id,
-            'pet_id' => $pet_id            
+    public function update() {
+        return (new Repository('owner'))->update("id = {$this->id}", [
+            'name' => $this->name,
+            'birth_date' => $this->birth_date,
+            'document_number' => $this->document_number,
+            'phone' => $this->phone,
+            'email' => $this->email,
+            'postal_code' => $this->postal_code,
+            'address' => $this->address,
+            'state' => $this->state,
+            'city' => $this->city
         ]);
-
-        return $owner_pet_id ? $owner_pet_id : false;
     }
 }
