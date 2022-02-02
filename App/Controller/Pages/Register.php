@@ -70,4 +70,15 @@ class Register Extends Page {
 
         return parent::getPage('Central Pet - Register', $content);
     }
+
+
+    public static function setRegisterEdit($request, $id) {
+        $data = $request->getPostVars();
+
+        if ( !EntityRegister::setRegisterEdit($data, $id) ) {
+            $request->getRouter()->redirect("/register/{$id}/edit?status=error");
+        }
+
+        $request->getRouter()->redirect("/register/{$id}/edit?status=updated");
+    }
 }
