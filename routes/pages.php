@@ -14,14 +14,14 @@ $obRouter->get('/', [
 ]);
 
 $obRouter->get('/about', [
-    function($idPagina, $acao) {
+    function() {
         return new Response(200, About::getAbout());
     }
 ]);
 
 $obRouter->get('/register', [
-    function() {
-        return new Response(200, Register::getRegister());
+    function($request) {
+        return new Response(200, Register::getRegister($request));
     }
 ]);
 
