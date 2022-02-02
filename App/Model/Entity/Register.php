@@ -36,6 +36,6 @@ class Register {
 
         Transaction::close();
 
-        return true;
+        return $pet->id;
     }
 }
