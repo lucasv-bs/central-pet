@@ -6,7 +6,7 @@ use App\View\View;
 
 
 class Register Extends Page {
-    public static function getRegister() {
+    public static function getRegister($request) {
         
         $content = View::render('pages/register', [
             'title' => 'Central Pet',
