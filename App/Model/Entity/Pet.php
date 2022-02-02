@@ -32,6 +32,30 @@ class Pet {
     }
 
 
+    public function getOwner() {
+
+        Transaction::open();
+        
+        $owners_ids = (new Repository('owner_pet'))->select("pet_id = {$this->id}");
+        $owner_id = $owners_ids->fetch();
+        $owner = Owner::getOwnerByValue($owner_id['owner_id']);
+        
+        Transaction::close();
+
+        return $owner;
+    }
+
+    
+    public function setOwner($owner_id) {
+        $owner_pet_id = (new Repository('owner_pet'))->insert([
+            'pet_id' => $this->id,
+            'owner_id' => $owner_id
+        ]);
+
+        return $owner_pet_id ? $owner_pet_id : false;
+    }
+
+
     public function insert() {
         $this->id = (new Repository('pet'))->insert([
             'name' => $this->name,
@@ -41,15 +65,5 @@ class Pet {
         ]);
 
         return $this->id ? $this->id : false;
-    }
-
-
-    public function setOwner($owner_id) {
-        $owner_pet_id = (new Repository('owner_pet'))->insert([
-            'pet_id' => $this->id,
-            'owner_id' => $owner_id
-        ]);
-
-        return $owner_pet_id ? $owner_pet_id : false;
     }
 }
