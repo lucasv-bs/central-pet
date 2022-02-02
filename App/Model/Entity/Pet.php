@@ -66,4 +66,14 @@ class Pet {
 
         return $this->id ? $this->id : false;
     }
+
+
+    public function update() {
+        return (new Repository('pet'))->update("id = {$this->id}", [
+            'name' => $this->name,
+            'breed' => $this->breed,
+            'birth_date' => $this->birth_date,
+            'last_vaccine_date' => $this->last_vaccine_date
+        ]);
+    }
 }
