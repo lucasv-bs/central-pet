@@ -54,9 +54,9 @@ class Repository {
 
         $query = "UPDATE {$this->table} SET ".implode('=?,', $fields)."=? WHERE {$where}";
 
-        $this->execute($query, array_values($values));
-
-        return true;
+        return $this->execute($query, array_values($values))
+            ? true
+            : false;
     }
 
 
