@@ -43,6 +43,12 @@ $obRouter->post('/register/{id}/edit', [
     }
 ]);
 
+$obRouter->get('/register/{id}/delete', [
+    function($request, $id) {
+        return new Response(200, Register::getRegisterDelete($request, $id));
+    }
+]);
+
 $obRouter->get('/report', [
     function() {
         return new Response(200, Report::getReport());
