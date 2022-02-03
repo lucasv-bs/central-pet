@@ -86,6 +86,20 @@ class Register Extends Page {
     }
 
 
+    public static function getRegisterDelete($request, $id) {
+        $pet = Pet::getPetByValue($id);
+        $owner = $pet->getOwner();
+
+        $content = View::render('pages/modules/register/delete', [
+            'title' => 'Central Pet',
+            'pet_name' => $pet->name,
+            'owner_name' => $owner->name
+        ]);
+
+        return parent::getPage('Central Pet - Register', $content);
+    }
+
+
     public static function getStatus($request) {
         $queryParams = $request->getQueryParams();
 
