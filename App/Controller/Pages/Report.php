@@ -14,7 +14,7 @@ class Report extends Page {
         $appointment_list = EntityReport::getAppointmentList();
 
         while($appointment = $appointment_list->fetch(PDO::FETCH_ASSOC)) {
-            $appointment_itens .= View::render('data/report/appointment-item', [
+            $appointment_itens .= View::render('pages/modules/report/appointment-item', [
                 'appointment_id' => $appointment['appointment_id'],
                 'owner_id' => $appointment['owner_id'],
                 'owner_name' => $appointment['owner_name'],
@@ -35,7 +35,7 @@ class Report extends Page {
         $register_list = EntityReport::getOwnerPetList();
 
         while($register = $register_list->fetch(PDO::FETCH_ASSOC)) {
-            $register_itens .= View::render('data/report/register-item', [
+            $register_itens .= View::render('pages/modules/report/register-item', [
                 'owner_id' => $register['owner_id'],
                 'owner_name' => $register['owner_name'],
                 'pet_id' => $register['pet_id'],
@@ -48,7 +48,7 @@ class Report extends Page {
 
 
     public static function getReport() {
-        $content = View::render('pages/report', [
+        $content = View::render('pages/modules/report/report', [
             'title' => 'Relatório',
             'appointment-itens' => self::getAppointmentItens(),
             'register-itens' => self::getRegisterItens()
