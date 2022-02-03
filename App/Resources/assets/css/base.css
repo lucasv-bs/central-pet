@@ -11,10 +11,14 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: calc(100vh - 6em);
     overflow-y: hidden;
 }
 
 #footer {
     background-color: #fff;
+}
+
+.cover-page {
+    height: calc(100vh - 6em);
 }
