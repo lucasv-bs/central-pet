@@ -11,7 +11,7 @@ use App\View\View;
 class Register Extends Page {
     public static function getRegister($request) {
         
-        $content = View::render('pages/register', [
+        $content = View::render('pages/modules/register/register', [
             'title' => 'Central Pet',
             'status' => self::getStatus($request),
             'pet_name' => '',
@@ -53,7 +53,7 @@ class Register Extends Page {
             $request->getRouter()->redirect('/register');
         }
 
-        $content = View::render('pages/register', [
+        $content = View::render('pages/modules/register/register', [
             'title' => 'Central Pet',
             'status' => self::getStatus($request),
             'pet_name' => $pet->name,
