@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller\Pages;
 
+use App\Controller\Alert\Status;
 use App\Model\Entity\Owner;
 use App\Model\Entity\Pet;
 use App\Model\Entity\Register as EntityRegister;
@@ -12,6 +13,7 @@ class Register Extends Page {
         
         $content = View::render('pages/register', [
             'title' => 'Central Pet',
+            'status' => self::getStatus($request),
             'pet_name' => '',
             'breed' => '',
             'birth_date' => '',
@@ -53,6 +55,7 @@ class Register Extends Page {
 
         $content = View::render('pages/register', [
             'title' => 'Central Pet',
+            'status' => self::getStatus($request),
             'pet_name' => $pet->name,
             'breed' => $pet->breed,
             'pet_birth_date' => $pet->birth_date,
@@ -80,5 +83,30 @@ class Register Extends Page {
         }
 
         $request->getRouter()->redirect("/register/{$id}/edit?status=updated");
+    }
+
+
+    public static function getStatus($request) {
+        $queryParams = $request->getQueryParams();
+
+        if (!isset($queryParams['status'])) return '';
+
+        switch($queryParams['status']) {
+            case 'created':
+                return Status::getSuccess('Register created successfully');
+                break;
+            case 'updated':
+                return Status::getSuccess('Register updated successfully');
+                break;
+            case 'deleted':
+                return Status::getSuccess('Register deleted successfully');
+                break;
+            case 'duplicated':
+                return Status::getError('Duplicated register');
+                break;
+            case 'error':
+                return Status::getError('Failed to save record');
+                break;
+        }
     }
 }
